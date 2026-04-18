@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>EWAKUACJA! - Szczecin Taktyczny</title>
+    <meta name="description" content="Szczecińska cywilna platforma ratunkowa i biblioteka protokołów bezpieczeństwa." />
+    
+    <!-- PWA & Mobile Optimization -->
+    <link rel="manifest" href="/assets/manifest-CwweiFUz.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#18181b">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Leaflet CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <!-- Leaflet MarkerCluster CSS & JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+
+    <style>
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #09090b; }
+      ::-webkit-scrollbar-thumb { background: #ef4444; border-radius: 10px; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-fadeIn { animation: fadeIn 0.3s ease-out forwards; }
+      
+      /* Tactical Grid Overlay */
+      .tactical-grid {
+        background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+      }
+      
+      .animate-spin-slow {
+        animation: spin 3s linear infinite;
+      }
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      /* Custom MarkerCluster Styles to fit Tactical Theme */
+      .marker-cluster-small, .marker-cluster-medium, .marker-cluster-large {
+        background-color: rgba(0, 0, 0, 0.6) !important;
+      }
+      .marker-cluster-small div, .marker-cluster-medium div, .marker-cluster-large div {
+        background-color: rgba(234, 179, 8, 0.8) !important;
+        color: black !important;
+        font-weight: 900 !important;
+        font-family: monospace !important;
+        box-shadow: 0 0 15px rgba(234, 179, 8, 0.5);
+      }
+    </style>
+
+  <link rel="stylesheet" href="/index.css">
+    <script type="importmap">
+{
+  "imports": {
+    "react-dom/client": "https://esm.sh/react-dom@19.2.3/client",
+    "react-dom": "https://esm.sh/react-dom@19.2.3",
+    "react": "https://esm.sh/react@19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@1.33.0",
+    "leaflet": "https://esm.sh/leaflet@1.9.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-DQ2tQf5M.js"></script>
+</head>
+  <body class="bg-black text-white antialiased overflow-hidden tactical-grid">
+    <div id="root"></div>
+</body>
+</html>

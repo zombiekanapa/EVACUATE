@@ -1,0 +1,21 @@
+
+{
+  "short_name": "EVACUATE!",
+  "name": "SZCZECIN SAFEPOINT NAVIGATOR",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3232/3232326.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3232/3232326.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#18181b",
+  "background_color": "#000000"
+}
