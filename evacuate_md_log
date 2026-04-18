@@ -1,0 +1,31 @@
+Evacuate project — session summary
+Date: 2026-04-18
+
+Summary:
+- Recovered and rebuilt project from backups into C:\EVACUATE_rebuild.
+- Installed dependencies (npm ci) and started dev server at http://localhost:3000.
+- Initialized git, created GitHub repo: https://github.com/zombiekanapa/EVACUATE and pushed main branch.
+- Fixed missing components by moving .tsx files into components/ and restored services/ (including geminiService.ts) from backup.
+- Built production bundle (dist) successfully.
+- Prepared Hugging Face static package at C:\EVACUATE_hf_space and ZIP C:\EVACUATE_hf_space.zip (initially empty until build succeeded; later filled).
+- Added GitHub Actions workflow to deploy to GitHub Pages; iterated to replace deprecated upload action and added workflow_dispatch and peaceiris/actions-gh-pages@v3.
+- Triggered workflow runs; investigated failures and resolved by updating workflow; manual workflow_dispatch run succeeded.
+- Confirmed local dev server reachable on LAN (http://192.168.1.13:3001/). Ngrok was not initially running; user later installed and authorized ngrok.
+
+Important file/folder locations:
+- Project (rebuild): C:\EVACUATE_rebuild
+- Dist (production build): C:\EVACUATE_rebuild\dist
+- HF static folder + zip: C:\EVACUATE_hf_space and C:\EVACUATE_hf_space.zip
+- Notes & backup sources: C:\Evacuate, C:\EVACUATE-notes, C:\eva-git, G:\... (external drive)
+- GitHub repo: https://github.com/zombiekanapa/EVACUATE
+
+Credentials & secrets:
+- No secrets were added to the repository. Remove or sanitize .env.local before pushing if it contains keys.
+
+Next steps (short):
+1) Clean .env.local, add LICENSE, docs.
+2) Decide hosting (Pages/Vercel/Hugging Face) and complete deployment of static assets to HF Space if desired.
+3) Implement server-side proxy for API keys or use serverless functions.
+4) Harden admin routes (auth) before exposing publicly via ngrok or cloud tunnels.
+
+Saved by assistant: Copilot (Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>)
