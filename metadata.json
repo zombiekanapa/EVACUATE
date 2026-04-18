@@ -1,0 +1,7 @@
+{
+  "name": "EVACUATE!",
+  "description": "Emergency evacuation shelter locator and protocol assistant for Szczecin, featuring AI-powered guidance and offline resources.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
